@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+@mixin clamp_property($property, $min, $pref, $max) {
+  #{$property}: clamp($min, $pref, $max);
+}
+
+@mixin flex_container($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin block_base {
+  background-color: $primary-bg;
+  border-radius: $base-radius;
+  box-shadow: $default-shadow;
+  @include flex_container(column);
+  @include clamp_property(padding, 0.625rem, calc(0.284rem + 1.7vw), 1.563rem);
+}

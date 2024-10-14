@@ -1,0 +1,6 @@
+@import '../../styles/base/mixins.scss';
+
+.info {
+  @include block_base;
+  row-gap: 8px;
+}

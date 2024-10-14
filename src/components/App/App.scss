@@ -1,3 +1,10 @@
-h1 {
-  text-align: center;
+@import '../../styles/base/mixins.scss';
+
+.app {
+  @include flex_container(column);
+  @include clamp_property(row-gap, 0.875rem, calc(0.511rem + 1.82vw), 1.875rem);
+  min-height: 100vh;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 10px;
 }

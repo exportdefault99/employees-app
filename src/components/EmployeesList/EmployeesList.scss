@@ -1,0 +1,11 @@
+@import '../../styles/base/mixins.scss';
+
+.employees-list {
+  @include block_base;
+  padding: 0;
+  background-color: #fff;
+  flex: 1;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-bottom: none;
+  overflow: hidden;
+}

@@ -1,0 +1,21 @@
+@import '../../styles/base/mixins.scss';
+
+.form {
+  @include flex_container(row, flex-start, center);
+  @include clamp_property(gap, 1rem, calc(0.17rem + 2.27vw), 1.875rem);
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  &__input-wrapper {
+    position: relative;
+    flex: 1;
+  }
+  &__errors {
+    position: absolute;
+    top: -14px;
+    left: 0;
+    font-size: 10px;
+    color: rgb(238 142 142);
+  }
+}

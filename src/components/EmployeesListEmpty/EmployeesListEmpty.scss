@@ -1,0 +1,9 @@
+@import '../../styles/base/mixins.scss';
+
+.list-empty {
+  flex: 1;
+  @include flex_container(row, center, center);
+  padding: 15px;
+  font-weight: 300;
+  @include clamp_property(font-size, 0.875rem, calc(0.784rem + 0.45vw), 1.125rem);
+}

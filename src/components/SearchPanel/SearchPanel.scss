@@ -1,0 +1,6 @@
+@import '../../styles/base/mixins.scss';
+
+.search-panel {
+  @include block_base;
+  @include clamp_property(row-gap, 0.625rem, calc(0.398rem + 1.14vw), 1.25rem);
+}

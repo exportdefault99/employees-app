@@ -1,0 +1,76 @@
+@import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
+
+.employees-item {
+  @include flex_container(row, space-between, center);
+  @include clamp_property(gap, 0.625rem, calc(-0.284rem + 4.55vw), 3.125rem);
+  @include clamp_property(padding-inline, 0.625rem, calc(0.398rem + 1.14vw), 1.25rem);
+  @include clamp_property(padding-block, 0.625rem, calc(0.511rem + 0.57vw), 0.938rem);
+  color: #212529;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  &:last-child {
+    border-bottom: none;
+  }
+  &__info {
+    @include flex_container(row, space-between, center);
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  &__name {
+    @include clamp_property(font-size, 0.875rem, calc(0.739rem + 0.68vw), 1.25rem);
+    cursor: pointer;
+    &:focus-visible {
+      outline-color: rgb(16, 16, 16);
+    }
+  }
+  &__salary {
+    @include clamp_property(font-size, 0.875rem, calc(0.739rem + 0.68vw), 1.25rem);
+  }
+  &__name,
+  &__salary {
+    padding: 5px;
+  }
+  &.star .fa-star {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  &.premium &__name,
+  &.premium &__salary {
+    color: #e09f3e;
+  }
+}
+
+.controls {
+  @include flex_container(row, center, center);
+  column-gap: 6px;
+  &__btn {
+    width: 35px;
+    height: 35px;
+    font-size: 17px;
+    background-color: rgb(240, 240, 240);
+    &_cookie {
+      color: #e09f3e;
+    }
+    &_trash {
+      color: #e5383b;
+    }
+    &:focus-visible {
+      outline-color: rgb(16, 16, 16);
+    }
+  }
+  .fa-star {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    color: #FFD700;
+    transition: 0.3s all;
+    transform: translateX(30px);
+    opacity: 0;
+    @media (max-width: 576px) {
+      transform: translateX(12px);
+    }
+  }
+}

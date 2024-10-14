@@ -1,0 +1,6 @@
+@import '../../styles/base/mixins.scss';
+
+.add-form {
+  @include block_base;
+  @include clamp_property(row-gap, 1rem, calc(0.398rem + 1.14vw), 1.25rem);
+}
